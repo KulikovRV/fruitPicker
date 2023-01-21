@@ -1,13 +1,15 @@
 {
     "name": "roman/fruit-garden-php",
     "type": "project",
+    "bin": [
+        "bin/fruitPicker"
+    ],
     "autoload": {
         "psr-4": {
-            "Roman\\FruitGardenPhp\\": "src/"
+            "App\\": "src/"
         },
         "files": [
-            "src/Fruit.php",
-            "src/getFruit.php"
+            "src/treeFabric.php"
           ]
     },
     "authors": [

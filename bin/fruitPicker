@@ -3,8 +3,35 @@
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
 if (file_exists($autoloadPath1)) {
     require_once $autoloadPath1;
 } else {
     require_once $autoloadPath2;
 }
+
+use App\Garden;
+use App\Harverster;
+use function App\createTrees;
+
+const APPLE_TYPE = 'apple';
+const PEAR_TYPE = 'pear';
+const DEFUALT_COUNT_APPLE_TREES = 10;
+const DEFUALT_COUNT_PEAR_TREES = 15;
+
+$seeds = [
+    APPLE_TYPE => DEFUALT_COUNT_APPLE_TREES, 
+    PEAR_TYPE => DEFUALT_COUNT_PEAR_TREES
+];
+
+$trees = createTrees($seeds);
+$garden = new Garden($trees);
+$harvestr = new Harverster($garden);
+
+
+$harvestr->harvestAllFruits();
+print_r($garden->getTrees());
+
+
+print_r($harvestr->getHarvestedFruits());
+

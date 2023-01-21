@@ -1,8 +1,18 @@
 <?php
 
-namespace Php\Package;
+namespace App;
 
-function customSum(int $a, int $b) : int
+class Fruit 
 {
-    return $a + $b;
+    private $weigh;
+
+    public function __construct($weight)
+    {
+        $this->weigh = $weight;
+    }
+
+    public function getWeigh() 
+    {
+        return $this->weigh;
+    }
 }
