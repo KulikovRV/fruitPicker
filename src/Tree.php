@@ -7,7 +7,7 @@ class Tree
     private $id;
     private $fruits;
 
-    public function __construct($id, $fruits = []) 
+    public function __construct($id, $fruits = [])
     {
         $this->id = $id;
         $this->fruits = $fruits;

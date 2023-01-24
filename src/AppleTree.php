@@ -4,7 +4,6 @@ namespace App;
 
 use App\Tree;
 
-class AppleTree extends Tree 
+class AppleTree extends Tree
 {
-
 }

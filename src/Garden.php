@@ -2,20 +2,22 @@
 
 namespace App;
 
-class Garden 
+class Garden
 {
     private $trees;
 
-    public function __construct($trees = []) 
+    public function __construct($trees = [])
     {
         $this->trees = $trees;
     }
 
-    public function getTrees() {
+    public function getTrees()
+    {
         return $this->trees;
     }
 
-    public function addNewTrees($newTrees) {
+    public function addNewTrees($newTrees)
+    {
         $this->trees = array_merge($this->trees, $newTrees);
     }
 }

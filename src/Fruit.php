@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Fruit 
+class Fruit
 {
     private $weigh;
 
@@ -11,7 +11,7 @@ class Fruit
         $this->weigh = $weight;
     }
 
-    public function getWeigh() 
+    public function getWeigh()
     {
         return $this->weigh;
     }

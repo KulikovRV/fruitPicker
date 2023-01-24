@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Harverster 
+class Harverster
 {
     private $garden;
     private $harvestedFruits = [];
