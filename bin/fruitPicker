@@ -28,10 +28,16 @@ $trees = createTrees($seeds);
 $garden = new Garden($trees);
 $harvestr = new Harverster($garden);
 
-
 $harvestr->harvestAllFruits();
-print_r($garden->getTrees());
+$harverstedFruits = $harvestr->getHarvestedFruits();
 
+$harvestr->sortHarvestedFruits($harverstedFruits);
+$sortedFruits = $harvestr->getSortedFruits();
 
-print_r($harvestr->getHarvestedFruits());
+$countHarverstedFruits = count($harverstedFruits);
+$countHarverstedAppleFruit = count($sortedFruits['apple']);
+$countHarverstedPearFruit = count($sortedFruits['pear']);
 
+print_r("Всего собрано {$countHarverstedFruits} фруктов. Из них: \n");
+print_r("- яблок {$countHarverstedAppleFruit} штук\n");
+print_r("- груш {$countHarverstedPearFruit} штук\n");
