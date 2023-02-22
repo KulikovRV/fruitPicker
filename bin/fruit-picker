@@ -10,14 +10,11 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use App\Garden;
-use App\Harverster;
-use function App\createTrees;
-
-const APPLE_TYPE = 'apple';
-const PEAR_TYPE = 'pear';
-const DEFUALT_COUNT_APPLE_TREES = 10;
-const DEFUALT_COUNT_PEAR_TREES = 15;
+use App\Garden\Garden;
+use App\Harverster\Harverster;
+use App\Engine;
+use function App\Fabric\createTrees;
+use const App\Constants\{APPLE_TYPE, PEAR_TYPE, DEFUALT_COUNT_APPLE_TREES, DEFUALT_COUNT_PEAR_TREES};
 
 $seeds = [
     APPLE_TYPE => DEFUALT_COUNT_APPLE_TREES, 
@@ -28,16 +25,5 @@ $trees = createTrees($seeds);
 $garden = new Garden($trees);
 $harvestr = new Harverster($garden);
 
-$harvestr->harvestAllFruits();
-$harverstedFruits = $harvestr->getHarvestedFruits();
-
-$harvestr->sortHarvestedFruits($harverstedFruits);
-$sortedFruits = $harvestr->getSortedFruits();
-
-$countHarverstedFruits = count($harverstedFruits);
-$countHarverstedAppleFruit = count($sortedFruits['apple']);
-$countHarverstedPearFruit = count($sortedFruits['pear']);
-
-print_r("Всего собрано {$countHarverstedFruits} фруктов. Из них: \n");
-print_r("- яблок {$countHarverstedAppleFruit} штук\n");
-print_r("- груш {$countHarverstedPearFruit} штук\n");
+$engine = new Engine($trees, $harvestr);
+$engine->run();

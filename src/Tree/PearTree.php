@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Tree;
 
-use App\Tree;
+use App\Tree\Tree;
 
 class PearTree extends Tree
 {

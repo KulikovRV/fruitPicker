@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Fabric;
 
-use App\AppleTree;
-use App\PearTree;
-use App\PearFruit;
-use App\AppleFruit;
+use App\Tree\AppleTree;
+use App\Tree\PearTree;
+use App\Fruit\PearFruit;
+use App\Fruit\AppleFruit;
 
 function createTrees($treeTypeAndCount)
 {

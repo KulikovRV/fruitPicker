@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Harverster;
 
 class Harverster
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Fruit;
 
-use App\Fruit;
+use App\Fruit\Fruit;
 
 class AppleFruit extends Fruit
 {
